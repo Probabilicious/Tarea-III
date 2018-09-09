@@ -170,8 +170,9 @@
   \begin{center}
   $P(A\cap B \cap C) = P(A)P(B)P(C)$
   \end{center}
-  pero que no sean independientes.
-	}
+  pero que no sean independientes.\\
+  \textbf{Definicion:}Dos eventos son independientes entre si $P(A\cap B)=P(A)P(B)$\\ \\ 
+  }
 
 	% Ejercicio 10
    \item {
@@ -179,10 +180,113 @@
     
     \begin{enumerate}[label=\alph*) ]
     \item{Se lanzan tres dados balanceados. Comparar la probabilidad de que la suma de las caras sea 8 con la probabilidad de que la suma de las caras sea 9.
-    }\\ 
+    \\
+    Tenemos que el espacio probabilístico está determinado por:\\
     
-    \item{Comparar la probabilidad de que al menos un 5 aparezca en cuatro lanzamientos de un dado balanceado con la probabilidad de que aparezca un doble 5 en 24 lanzamientos de dos dados balanceados.} \\
-    \item{Comparar la probabilidad de que al menos un 3 aparezca cuando seis dados son lanzados con la probabilidad de que al menos dos 3s aparezcan cuando doce dados son lanzados.}
+    \begin{center}
+    $\Omega = \lbrace (x_{1},x_{2},x_{3}) : x_{i} \in \lbrace 1,2,3,4,5,6 \rbrace \ \forall i\in \lbrace 1,2,3 \rbrace \rbrace$
+    \end{center} 
+    Y se interpeta a cada elemento de la terna como el valor numérico que resulta de tirar un dado. Entonces tenemos que la cantidad de eventos posibles es la norma del conjunto $\Omega$. Y como cada entrada tiene 6 posibles valores entonces todos los valores posibles son:\\
+    \begin{center}
+    $||\Omega|| = 6^3$
+    \end{center}
+    Entonces, el evento A definido como: \\
+    \begin{center}
+    $A= \lbrace (x_{1},x_{2},x_{3}) : \sum\limits_{i=1}^{3} x_{i} = 8 \rbrace$
+    \end{center}
+    Usando técnicas de conteo tenemos que:\\
+    \begin{center}
+    $8 = 6+1+1=5+2+1=4+3+1=3+3+2=2+4+2$
+    \end{center}
+    Y esas son todas las formas posibles de representar al numero 8 como una suma de numeros enteros positivos que se encuentran en un rango del 1 al 6. Pero como se pueden conmutar los sumandos se tiene que: \\
+La terna $(6,1,1)$ al conmutar sus elementos se tienen $3!$ formas de tener una terna que sume 8. Pero, como dos elementos de la terna son iguales se restan 3 casos pues no se discierne de $(6,1,1)$ y $(6,1,1)$ cambiando los unos. Se hace el mismo procedimiento con las demás ternas, teniéndose que aquellas ternas que no repitan elementos sí dan $3!$ entonces:\\
+\begin{center}
+$||A||=5(3!)-3-3-3=5(3!)-9=21$
+\end{center}
+Y la probabilidad es entonces:\\
+\begin{center}
+$P(A)=\frac{||A||}{||\Omega||}=\frac{21}{216}$
+\end{center}
+De forma análoga se tiene que el evento B es:\\
+\begin{center}
+$B= \lbrace (x_{1},x_{2},x_{3}) : \sum\limits_{i=1}^{3} x_{i}=9 \rbrace$
+\end{center}
+Y que:\\
+\begin{center}
+$9=6+2+1=5+3+1=4+4+1=3+3+3=2+4+3=5+2+2$
+\end{center}
+Y la terna (3,3,3) tiene una unica forma de representarse por lo tanto:\\
+\begin{center}
+$||B||= 6(3!)-3-5-3=36-11=25$
+\end{center}
+Se le resta -3 a las ternas con dos elementos iguales y -5 a la terna con todos sus elementos iguales por lo tanto la probabilidad de B es:\\
+\begin{center}
+$P(B)=\frac{||B||}{||\Omega||}=\frac{25}{216}$
+\end{center}
+    }
+    \item{Comparar la probabilidad de que al menos un 5 aparezca en cuatro lanzamientos de un dado balanceado con la probabilidad de que aparezca al menos un doble 5 en 24 lanzamientos de dos dados balanceados.\\
+    Se tiene que el conjunto de eventos es:\\
+    \begin{center}
+    $\Omega = \lbrace (x_{1},x_{2},x_{3},x_{4}): x_{i}\in \lbrace 1,2,3,4,5,6 \rbrace \ \forall i\in \lbrace 1,2,3,4 \rbrace \rbrace$
+    \end{center}
+    Donde cada $x_{i}: \ i\in \lbrace 1,2,3,4 \rbrace$ representa el valor obtenido del dado en cada tiro. Se sigue que por el inciso anterior la norma de $\Omega$ es $6^4$ ya que en cada tiro hay 6 posibilidades de valor.Y se caracteriza al evento descrito como:\\
+    \begin{center}
+    $A= \lbrace (x_{1},x_{2},x_{3},x_{4}): \exists i\in \lbrace 1,2,3,4 \rbrace : x_{i}=5 \rbrace$
+    \end{center}
+Tenemos que la probabilidad de que no salga ningun cinco es de: $P(A^c)=\frac{5^4}{6^4}$ debido a que solo hay 5 opciones por cada entrada, las opciones que no son 5. Entonces:\\
+\begin{center}
+$P(A)=1-P(A^c)=1-\frac{5^4}{6^4}=\frac{6^4-5^4}{6^4}=\frac{671}{1296} $
+\end{center}
+Ahora, tenemos que el conjunto $\Omega_{1}$ de eventos es:\\
+\begin{center}
+$\Omega_{1} = \lbrace (x_{1},x_{2},...,x_{24}) : x_{i}\in R^2 \ i \in  \lbrace 1,2,...,24 \rbrace \rbrace$
+\end{center}
+Donde cada $x_{i}$ elemento de la sucesion de tiros es el tiro de dos dados $(x_{i_{1}},x_{i_{2}})$.
+Al tirar dos dados hay así $6^2$ posibilidades y al ser 24 tiros son $(6^2)^{24}$ posibilidades. La probabilidad de que no se obtenga ningun doble cinco esta dada por:\\
+\begin{center}
+$P(B^c)= \frac{(5^2)^{24}}{(6^2)^{24}}=(\frac{25}{36})^{24}$
+\end{center}
+Entonces la probabilidad de que salga al menos un doble 5 es:\\
+\begin{center}
+$1-(\frac{25}{36})^{24}=\frac{1}{1}-\frac{5^{48}}{6^{48}}=\frac{6^{48}-5^{48}}{6^{48}}\approx 99.98$ por ciento.
+\end{center}
+    } 
+    \item{Comparar la probabilidad de que al menos un 3 aparezca cuando seis dados son lanzados con la probabilidad de que al menos dos 3s aparezcan cuando doce dados son lanzados.\\
+    Los eventos estan dados por: \\
+    \begin{center}
+    $\Omega = \lbrace (x_{1},x_{2},...,x_{6}): x_{i}\in \lbrace 1,2,3,4,5,6\rbrace \forall i\in \lbrace 1,2,3,4,5,6 \rbrace \rbrace$
+    \end{center}
+    Donde la cantidad total de eventos es $|\Omega|=6^6$
+    Y se define el evento A como:\\
+    \begin{center}
+    $A = \lbrace (x_{1},x_{2},x_{3},x_{4},x_{5},x_{6}):\exists i\in \lbrace 1,2,3,4,5,6 \rbrace : x_{i}=3 \rbrace$
+    \end{center}
+    La probabilidad de que no aparezca un 3 es: $P(A^c)= \frac{5^6}{6^6}$ entonces: \\
+    \begin{center}
+    $P(A)=1-P(A^c)=1-\frac{5^6}{6^6}=\frac{6^6-5^6}{6^6}\approx 66.51 $ por ciento.
+    \end{center}
+    Tenemos que ahora al lanzar doce dados los eventos son:\\
+    \begin{center}
+    $\Omega_{1}= \lbrace (x_{1},...,x_{12}): x_{i}\in \lbrace 1,2,3,4,5,6 \rbrace \forall i \in \lbrace 1,..,12 \rbrace \rbrace$
+    \end{center}
+    Y con el mismo razonamiento de los incisos anteriores se tiene que $|\Omega_{1}|=6^{12}$. Tenemos que los casos donde no aparece el tres son: :\\
+    \begin{center}
+    $|B^c|= 5^{12}$
+    \end{center}
+    Entonces si al total de casos les restamos $5^{12}$ tenemos la cantidad de casos donde hay al menos un tres. Es decir $6^{12}-5^{12}$ es el numero de casos donde al menos hay un tres. De esta cantidad hay que restar la cantidad de veces donde aparece exactamente un tres para asi quedarnos con la cantidad de veces con que al menos aparece dos tres. Entonces, podemos fijar al tres de la siguiente manera:\\
+    \begin{center}
+    $(3,x_{2},...,x_{12}), \ (x_{1},3,...,x_{12}), \ ... ,(x_{1},x_{2},...,3)$
+    \end{center}
+    Hay claramente 12 formas de ir moviendo el tres. Como ese tiene que ser el unico tres entonces con los demas casos hay $5^{11}$ formas de ir eligiendo pues tiene que ser el unico tres en ese conjunto. Entonces hay $12(5^{11})$ formas de elegir de forma que salga un tres solamente. Entonces tenemos que:\\
+    \begin{center}
+    $6^{12}-5^{12}-12(5^{11})$
+    \end{center}
+    Es la cantidad de formas de elegir de manera que al menos dos tres salgan. Por lo tanto:\\
+    \begin{center}
+    $P(C)=\frac{6^{12}-5^{12}-12(5^{11})}{6^{12}} \approx$ 66.86 por ciento.
+    \end{center}
+    
+    }
     \end{enumerate}
 	}
 
@@ -190,6 +294,21 @@
 	% Ejercicio 11
    \item {
    De un ejemplo de un espacio de probabilidad tal que tres eventos $A_{1},A_{2},A_{3}$ satisfagan que $P(A_{i}\cap A_{j})=P(A_{i})P(A_{j})$ para $i\neq j$ pero que no sean independientes.\\
+     Propongamos el siguiente espacio de probabilidad donde se busca la probabilidad de que aparezca algún elemento del conjunto:\\
+  $\Omega = \lbrace a_{1}, a_{2}, a_{3}, a_{4} \rbrace$\\
+  $A_{1} = \lbrace a_{1}, a_{2} \rbrace$, $A_{2} = \lbrace a_{2}, a_{3} \rbrace$ y $A_{3} =  \lbrace a_{3}, a_{1} \rbrace$\\
+  De ahí, $P(A_{1}) = 0.5$, $P(A_{2}) = 0.5$ y $P(A_{3}) = 0.5$.\\\\
+  Tenemos que:\\
+  $P(A_{1} \cap A_{2}) = 0.25 = P(A_{1})P(A_{2})$\\
+  $P(A_{2} \cap A_{3}) = 0.25 = P(A_{2})P(A_{3})$\\
+  $P(A_{1} \cap A_{3}) = 0.25 = P(A_{1})P(A_{3})$\\
+
+  Si los 3 eventos fueran independientes, significaría que: \\$P(A_{1} \cap A_{2} \cap A_{3}) = P(A_{1})P(A_{2})P(A_{3})$\\
+  Veamos si es así:\\
+  $P(A_{1} \cap A_{2} \cap A_{3}) = 0$\\
+  $P(A_{1})P(A_{2})P(A_{3}) = 0.125$\\
+  $ 0  \neq 0.125$ \\
+  Por lo tanto los tres eventos no son independientes y el ejemplo cumple con la hipótesis.\\
 	}
 
 % Ejercicio 12
