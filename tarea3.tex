@@ -1,0 +1,232 @@
+% ====== TAREA 3 DE PROBABILIDAD ======
+
+\documentclass[12pt,a4paper]{report}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+
+\newcommand*{\Comb}[2]{{}^{#1}C_{#2}}
+
+\begin{document}
+\begin{titlepage}
+	\centering
+	{\scshape\LARGE Universidad Autónoma de México \par}
+	\vspace{1cm}
+	{\scshape\Large Probabilidad I\par}
+	\vspace{1.5cm}
+	{\huge\bfseries Tarea III\par}
+	\vspace{.5cm}
+	{\Large\itshape Sandra Del Mar Soto Corderi \par}
+	\vspace{.5cm}
+	{\Large\itshape Edgar Quiroz Castañeda \par}
+    \vspace{.5cm}
+	{\Large\itshape Raúl Llamosas Alvarado \par}
+	 \vspace{.5cm}
+	{\Large\itshape Alan Ernesto Arteaga Vázquez \par}
+	\vfill
+	 \includegraphics[width=0.5\textwidth]{escudo.png}
+	\vfill
+
+% Bottom of the page
+	{\large Martes 4 de septiembre del 2018 \par}
+\end{titlepage}
+
+\pagebreak
+\setlength{\voffset}{-0.75in}
+\setlength{\headsep}{5pt}
+
+\begin{enumerate}
+   % Ejercicio 1
+   \item {
+  Una urna contiene cinco bolas numeradas del 1 al 5 de las cuales las primeras tres son negras y las últimas dos son doradas. Se extrae una muestra con reemplazo de tamaño dos. Sea $B_{1}$ el evento de que la primera bola extraída sea nera y sea $B_{2}$ el evento de que la segunda bola sea negra.
+\begin{enumerate}[label=\alph*) ]
+	%a
+	\item{Describir el espacio muestral para este experimento y exhibir los eventos $B_{1},B_{2}$ y $B_{1}\cap B_{2}$ \\
+
+	}
+
+	%b
+	\item{Encontrar $P(B_{1}),P(B_{2}),P(B_{1}\cap B_{2})$\\
+
+	}
+
+	%c
+	\item{Repetir los incisos (a),(b) para un muestreo sin reemplazo. \\
+
+	}
+
+
+
+\end{enumerate}
+
+	}
+
+	% Ejercicio 2
+   \item {
+    Diga si las siguientes afirmaciones son verdaderas o falsas. Demuestre o de un contraejemplo:\\
+    
+    \begin{enumerate}[label=\alph*) ]
+	%a
+	\item{ $P(A|B) \leq P(A)$\\
+
+	}
+
+	%b
+	\item{Si $P(A|B) \geq P(A) \Rightarrow P(B|A)\geq P(B)$\\
+
+	}
+
+	%c
+	\item{Si $P(A)=0 \Rightarrow A= \emptyset$ \\
+
+	}
+	
+	\item{Si $P(A)=P(B^c) \Rightarrow A=B^c$}\\
+	
+	\item{$P(A|B) + P(A|B^c)=1$}\\
+	
+	\item{Si A y B son mutuamente excluyentes entonces $P(A|A \cup B)=\frac{P(A)}{P(A)+P(B)}$}
+
+
+
+\end{enumerate}
+
+	}
+
+
+	% Ejercicio 3
+   \item {
+   
+	\begin{enumerate}[label=\alph*) ]
+	% a)
+   \item {
+	Se dice que un evento B carga informacion negativa acerca del evento A si $P(A|B) \leq P(A)$, se denota  $B \searrow A$. Demuestre o de un contraejemplo a las siguientes afirmaciones:
+		\begin{enumerate}
+		\item{Si $B \searrow A \Rightarrow A \searrow B$}\\
+		\item{Si $B \searrow A \ \wedge A \searrow C \ \Rightarrow B \searrow C$}\\
+		\item{Si $B \searrow A \ \wedge C \searrow A \ \Rightarrow B\cap C \searrow A$}
+		\end{enumerate}
+
+
+   }
+
+   % b)
+   \item {
+ Se dice que un evento B carga informacion positiva acerca del evento A si
+ $P(A|B) \geq P(A)$ se denota como $B \nearrow A$. Demuestre o de un contraejemplo a las siguientes afirmaciones:
+ \begin{enumerate}
+ \item{Si $B\nearrow A \ \Rightarrow A\nearrow B$}\\
+ \item{Si $B \nearrow A \ \wedge A \nearrow C \ \Rightarrow B \nearrow C$}\\
+ \item{Si $B \nearrow A \ \wedge C \nearrow A \ \Rightarrow B\cap C \nearrow A$}
+ \end{enumerate}
+
+   }
+
+
+
+
+	\end{enumerate}
+
+	}
+
+	% Ejercicio 4
+   \item {
+  	Se tienen 100 urnas de tres diferentes tipos. El primer tipo contiene 8 bolas blancas y 2 negras; el segundo tipo 4 blancas y 6 negras; el tercero 1 blanca y 9 negras. Se selecciona una urna al azar y se extrae de ella una bola que resulta blanca. Se devuelve la bola a la urna y se repite el proceso, siendo ahora la bola extraída negra. Si sabe que la probabilidad de que siendo la bola blanca proceda el primer tipo de urna es $\frac{16}{36	}$ y la probabilidad de que siendo la bola negra proceda del segundo tipo de urna es $  \frac{30}{61}$. Calcular el número de urnas de cada tipo.
+	}
+
+	% Ejercicio 5
+   \item {
+   Demuestre que si A,B,C son independientes entonces A y $B\cup C$ son independientes.
+	
+    }
+
+	% Ejercicio 6
+   \item {
+   Se sabe que $P(A)= \frac{1}{2}$ y $P(A\cup B)=\frac{7}{10}$. Alex supone que A y B son independientes y calcula $P(B)$ basándose en dicha suposición. Augusto supone que A y B son mutuamente excluyentes y calcula $P(B)$ basándose en dicha suposición. Encontrar la diferencia absoluta entre los dos resultados.
+	}
+
+	% Ejercicio 7
+   \item {
+   Considérese $(\Omega,F, P)$ un esacio de probabilidad. Demuestre que si $\lbrace A_{i} \rbrace _{i=1}^{n} \subset F$ son eventos independientes entonces:\\
+   \begin{center}
+   $P(\bigcup\limits_{i=1}^{n} A_{i})=1-\prod\limits_{i=1}^{n} (1-P(A_{i}))$
+   \end{center}
+	}
+
+	% Ejercicio 8
+   \item {
+    Sea $\Omega = \lbrace 1,2,3,4 \rbrace$ y supongase que $P(\lbrace i \rbrace)=.25$ para cualquier $i\in \rbrace 1,2,3,4 \rbrace$. Demuestre que las parejas de eventos A y B, A y C, B y C son independientes. Donde:\\
+    \begin{center}
+    $A=\lbrace 1,2,3,4 \rbrace \ \ B=\lbrace 2,3 \rbrace \ \ C= \lbrace 2,4 \rbrace $
+\end{center}     
+	}
+
+	% Ejercicio 9
+   \item {
+  Exhiba un ejemplo de un espacio de probabilidad de tal manera que $A,B,C$ satisfagan que: \\ 
+  \begin{center}
+  $P(A\cap B \cap C) = P(A)P(B)P(C)$
+  \end{center}
+  pero que no sean independientes.
+	}
+
+	% Ejercicio 10
+   \item {
+    Se presentan tres problemas clasicos de probabilidad. 
+    
+    \begin{enumerate}[label=\alph*) ]
+    \item{Se lanzan tres dados balanceados. Comparar la probabilidad de que la suma de las caras sea 8 con la probabilidad de que la suma de las caras sea 9.
+    }\\ 
+    
+    \item{Comparar la probabilidad de que al menos un 5 aparezca en cuatro lanzamientos de un dado balanceado con la probabilidad de que aparezca un doble 5 en 24 lanzamientos de dos dados balanceados.} \\
+    \item{Comparar la probabilidad de que al menos un 3 aparezca cuando seis dados son lanzados con la probabilidad de que al menos dos 3s aparezcan cuando doce dados son lanzados.}
+    \end{enumerate}
+	}
+
+
+	% Ejercicio 11
+   \item {
+   De un ejemplo de un espacio de probabilidad tal que tres eventos $A_{1},A_{2},A_{3}$ satisfagan que $P(A_{i}\cap A_{j})=P(A_{i})P(A_{j})$ para $i\neq j$ pero que no sean independientes.\\
+	}
+
+% Ejercicio 12
+   \item {En el salón de un cierto grupo de Probabilidad I hay 4 hombres y 6 mujeres que estudian la licenciatura en Actuaría. También hay 6 hombres que estudian la licenciatura en Matemáticas. ¿Cuántas mujeres de la licenciatura en Matemáticas deben estar presentes en la clase si el sexo y la carrera se consideran independientes cuando se selecciona un estudiante al azar?	
+	}
+
+	  %Ejercicio 13
+  \item{
+ Resuelva los siguientes ejercicios:\\
+ \begin{enumerate}[label=\alph*) ]
+ \item{Se sabe que $P(A)= \frac{2}{5},P(A\cup B)=\frac{3}{5},P(B|A)=\frac{1}{4},P(C|B)=\frac{1}{3}$ y $P(C|A\cap B)=\frac{1}{2}$. Encontrar $P(A|B\cap C)$}\\
+ \item{Se sabe que $P(A|B\cap C)=0.6, P(B|A\cap C)=0.3$ y $P(C|A\cap B)=0.9$ encontrar: \\ 
+ \begin{center}
+ $P(A\cap B\cap C| (A\cap B) \cup (A\cap C) \cup (B\cap C)$
+ \end{center} }
+ \end{enumerate}
+  }
+
+
+		  %Ejercicio 14
+  \item{
+ Una caja contiene bolas numeradas del 1 al n de modo que al escoger una bola al azar la probabilidad de obtener un numero es proporcional a su magnitud. Se selecciona una bola al azar ¿Cuál es la probabilidad de que esté marcada con el número 1\\
+ \begin{enumerate}[label= \alph*) ]
+ \item{Sin tener informacion adiconal?}\\
+ \item{Sabiendo que la bola seleccionada está marcada con algún número entre 1 y m$\leq m \leq n$?}
+ \end{enumerate}
+  }
+
+  		  %Ejercicio 15
+  \item{
+Un alumno está buscando una tarjeta para regalarle a su novia, dicho alumno tiene acceso a tres tiendas de regalos, cada una de las tiendas opera en forma independiente de las otras. Cada tienda tiene $\frac{1}{2}$ de probabilidad de tener el regalo buscado y si la tienda tiene el regalo la probabilidad de que el regalo se encuentre agotado es de $\frac{1}{2}$. Encuentre la probabilidad de que el alumno consiga el regalo en alguna de las tres tiendas.
+  }
+
+
+
+
+
+
+\end{enumerate}
+\end{document}
