@@ -312,7 +312,61 @@ $1-(\frac{25}{36})^{24}=\frac{1}{1}-\frac{5^{48}}{6^{48}}=\frac{6^{48}-5^{48}}{6
 	}
 
 % Ejercicio 12
-   \item {En el salón de un cierto grupo de Probabilidad I hay 4 hombres y 6 mujeres que estudian la licenciatura en Actuaría. También hay 6 hombres que estudian la licenciatura en Matemáticas. ¿Cuántas mujeres de la licenciatura en Matemáticas deben estar presentes en la clase si el sexo y la carrera se consideran independientes cuando se selecciona un estudiante al azar?	
+   \item {En el salón de un cierto grupo de Probabilidad I hay 4 hombres y 6 mujeres que estudian la licenciatura en Actuaría. También hay 6 hombres que estudian la licenciatura en Matemáticas. ¿Cuántas mujeres de la licenciatura en Matemáticas deben estar presentes en la clase si el sexo y la carrera se consideran independientes cuando se selecciona un estudiante al azar?	\\
+
+	Tenemos que en el grupo de probabilidad se tienen:\\
+	\begin{center}
+	$Proba = \left\{
+	\begin{array}{ll}
+		4 \ \ hombres \ \ actuaria \\
+		6 \ \ mujeres \ \ actuaria \\
+		6 \ \ hombres \ \ matematicas \\
+		x \ \ mujeres \ \ matematicas \\
+	\end{array}
+\right.$
+\end{center}	  
+De forma que $x\in N$.Por lo que afirmamos que hay 16+x personas en el grupo de probabilidad.. Y definimos los siguientes eventos a continuación:\\
+\begin{center}
+$P(Hombre)=\frac{||Hombre||}{||Proba||}=\frac{10}{16+x}$\\
+$P(Matematicx)=\frac{||Matematicx||}{||Proba||}=\frac{6+x}{16+x}$\\
+$P(Hombre \ \cap \ Matematicx)=\frac{6}{16+x}$
+\end{center}
+   Analogamente con los demas. Si queremos que sean eventos independientes entonces se tiene que cumplir que:\\
+   \begin{center}
+   $P(Hombre \ \cap \ Matematicx) = P(Hombre)P(Matematicx)$ \ \ i.e \linebreak \linebreak
+   $\frac{6}{16+x}=(\frac{10}{16+x})(\frac{6+x}{16+x})$
+   \end{center}
+   Entonces al igualar $P(Hombre \ \cap \ Actuarix) =P(Hombre)P(Actuarix)$,$P(Mujer \  \cap \ Matematicx)=P(Mujer)P(Matematicx) $, $P(Mujer \ \cap \ Actuarix)=P(Mujer)P(Actuarix)$ se tiene el siguiente sistema de ecuaciones:\\
+   \begin{center}
+   $\left\{
+	\begin{array}{ll}
+		\frac{6}{16+x}=(\frac{10}{16+x})(\frac{6+x}{16+x})\ (1)\\ \\
+		\frac{4}{16+x}=(\frac{10}{16+x})(\frac{10}{16+x}) \ (2)\\ \\
+		\frac{x}{16+x}=(\frac{6+x}{16+x})(\frac{6+x}{16+x})\ (3)\\ \\
+		\frac{6}{16+x}=(\frac{6+x}{16+x})(\frac{10}{16+x})\ (4)
+	\end{array}
+\right.$
+   \end{center}
+   Donde (1) es el caso de hombre y matematico. (2) es el caso de hombre y actuario, (3) es el de mujer y matematica y (4) el de mujer y actuaria. Notamos rapidamente que tanto (1) como (4) son iguales entonces simplificando el sistema de ecuaciones se tiene que:\\
+   \begin{center}
+   $\left\{
+	\begin{array}{ll}
+		6=\frac{60+10x}{16+x}\\ \\
+		4=\frac{100}{16+x}\\ \\
+		x=\frac{(6+x)^2}{16+x}
+	
+	\end{array}
+\right.$
+   \end{center}
+   De (1),(2) y (3) se tiene que:\\
+   \begin{center}
+   $96+6x=60+10x \ \Rightarrow \frac{96-60}{4}=x \ \Rightarrow 9=x$ \linebreak \linebreak 
+   $64+4x=100 \ \Rightarrow x=\frac{100-64}{4}=\frac{36}{4}=9$ \linebreak
+      $16x+x^2=36+12x+x^2 \ \Rightarrow 4x=36 \ \Rightarrow x=9$\\
+
+   \end{center}
+   Entonces de (1),(2) y (3) la cantidad de mujeres tiene que ser 9.
+   Entonces para que los eventos sean independientes tiene que haber exactamente 9 mujeres.
 	}
 
 	  %Ejercicio 13
