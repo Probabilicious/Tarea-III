@@ -46,15 +46,56 @@
 	%a
 	\item{Describir el espacio muestral para este experimento y exhibir los eventos $B_{1},B_{2}$ y $B_{1}\cap B_{2}$ \\
 
+	Proponemos el siguiente espacio muestral:\\
+	$\Omega:$ Las cinco bolas numeradas {(extracción1, extracción2)}\\
+	$B_{1}$: La primera bola sacada es negra $\{(negro,x),x\}$\\
+	$B_{2}$: La segunda bola sacada es negra $\{(x,negro),x\}$\\
+	$B_{1}\cap B_{2}$: La primera y segunda bolas sacadas sean negras $\{(negro,negro)\}$\\
+
 	}
 
 	%b
 	\item{Encontrar $P(B_{1}),P(B_{2}),P(B_{1}\cap B_{2})$\\
-
+ 	
+ 	$P(B_{1}) = \frac{3}{5}$\\
+ 	Ya que los eventos son independientes por el reemplazo, tenemos que:
+ 	$P(B_{2}) = \frac{3}{5}$\\
+ 	$P(B_{1}\cap B_{2}) = P(B_{1})P(B_{2}) = \frac{3}{5} \cdot \frac{3}{5}$\\
+ 	$P(B_{1}\cap B_{2}) = \frac{9}{25}$\\
+	
 	}
 
 	%c
 	\item{Repetir los incisos (a),(b) para un muestreo sin reemplazo. \\
+
+	El espacio muestral sería equivalente, solo que hara será sin reemplazo:\\
+	$\Omega:$ Las cinco bolas numeradas {(extracción1, extracción2)}\\
+	$B_{1}$: La primera bola sacada es negra $\{(negro,x),x\}$\\
+	$B_{2}$: La segunda bola sacada es negra $\{(x,negro),x\}$\\
+	$B_{1}\cap B_{2}$: La primera y segunda bolas sacadas sean negras $\{(negro,negro)\}$\\
+
+	$P(B_{1}) = \frac{3}{5}$\\
+	
+	De teoría de conjuntos, tenemos que: $B_{2} = (B_{2} \cap B_{1}) \cup (B_{2} \cap B_{1}^c) $ y esos conjuntos son ajenos.\\
+	
+	
+	Entonces: $P(B_{2}) = P(B_{2} \cap B_{1}) + P(B_{2} \cap B_{1}^c)$\\
+
+	Para obtener $P(B_{1}\cap B_{2})$, usamos la definición de probabilidad condicional y tenemos que: $P(B_{1}\cap B_{2}) = P(B_{1}|B_{2})P(B_{1})$\\
+	
+	 $P(B_{2}|B_{1}) = \frac{1}{2}$ ya que es la probailidad después de sacar una vez una bola negra, ya que no hay reemplazo, nos quedarían 2 bolas negras y dos bolas doradas, por la que la probabilidad de sacar de nuevo negra, sería de un medio.\\
+	 
+	  $P(B_{1}\cap B_{2}) = \frac{3}{5} \cdot \frac{1}{2}$\\
+	  $P(B_{1}\cap B_{2}) = \frac{3}{10}$\\ 
+	  
+	  $P(B_{2} \cap B_{1}^c) = P(B_{2}|B_{1}^c)P(B_{1}^c)$\\
+	  Tenemos que $P(B_{1}^c) = \frac{2}{5}$ y $P(B_{2}^c|B_{1}^c) = \frac{3}{4}$ ya que considerando que obtuviste una dorada en la primera extracción, quedarían 3 bolas negras y 1 dorada.\\
+	  $P(B_{2} \cap B_{1}^c) = \frac{2}{5} \cdot \frac{3}{4} = \frac{3}{10}$\\
+	  
+	  De todo lo anterior, $P(B_{2}) = \frac{3}{10} + \frac{3}{10}$\\
+	  $P(B_{2}) = \frac{3}{5}$\\
+	  
+	  
 
 	}
 
@@ -72,24 +113,76 @@
 	%a
 	\item{ $P(A|B) \leq P(A)$\\
 
+	Verdadero\\
+	
+	Demostración:\\
+	Sabemos que $P(A|B) \subseteq$ P(A), ya que $(A \cap B) \subseteq A$\\
+	Usando el teorema visto en clase: 
+	(Si $A, B \in F$ tal que $A \subseteq B \Rightarrow P(A) \leq P(B)$)\\
+	Tenemos que $P(A|B) \leq P(A)$\\
+
 	}
 
 	%b
 	\item{Si $P(A|B) \geq P(A) \Rightarrow P(B|A)\geq P(B)$\\
+	
+	Verdadero\\
+	
+	Demostración:\\
+	$P(A|B) = \frac{P(A \cap B)}{P(B)} \geq P(A)$\\
+	Dividimos entre $P(A)$ y entre $P(B)$
+	$ = \frac{P(A \cap B)}{P(A)} \geq P(B)$ \\
+	Por definición
+	$P(B|A) \geq P(B)$\\
 
 	}
 
 	%c
 	\item{Si $P(A)=0 \Rightarrow A= \emptyset$ \\
 
+	Falso\\
+	
+	Contrajemplo:\\
+	Se tiene $X$ una variable en la distribución continua $[0,1]$\\
+	$A:$ cuando $X = 0.5$\\
+	$P(A)=0$, pero A no es $\emptyset$\\
 	}
 	
 	\item{Si $P(A)=P(B^c) \Rightarrow A=B^c$}\\
 	
+	Verdadero\\
+	
+	Demostración:\\
+	Demostrando para llegar a contradicción, supongamos que $A \neq B^c$.\\
+	Sin pérdida de generalidad, existe $x \in A$ tal que $x \not\in B^c$.\\ 
+	Entonces ${x} \in P(A)$ donde ${x} \not\in P(B^c)$. Por lo tanto, $P(A) \neq P(B^c)$!\\
+	De ahí, $A = B^c$\\
+	
 	\item{$P(A|B) + P(A|B^c)=1$}\\
 	
-	\item{Si A y B son mutuamente excluyentes entonces $P(A|A \cup B)=\frac{P(A)}{P(A)+P(B)}$}
+	Falso\\
+	
+	Contraejemplo: Demos el siguiente espacio muestral\\
+	$\Omega:$ Se rola un dado de 6 caras\\
+	$A$: El número rolado es 1\\
+	$B$: El número rolado es impar\\
+	$B^c:$ El número rolado es par\\
+	
+	Tenemos que $P(A|B)= \frac{\frac{1}{6}}{\frac{3}{6}} = \frac{1}{3}$\\
+	Y $P(A|B^c) = 0$, por lo tanto $\frac{1}{3} + 0 \neq 0$\\
+	
+	
+	\item{Si A y B son mutuamente excluyentes entonces $P(A|A \cup B)=\frac{P(A)}{P(A)+P(B)}$}\\
 
+	Verdadero\\
+	
+	Demostración:\\
+	 $P(A|A \cup B) = \frac{P (A \cap (A \cup B))}{P(A \cup B)}$\\
+	Como son mutuamente excluyentes, sabemos que $A \cap B = \emptyset$ y $P(A \cup B) = P(A) + P(B)$\\
+	De propiedades de conjuntos tenemos que $A \cap (A \cup B) = (A \cap A) \cup (A \cap B)$. Como son mutuamente excluyentes, $\emptyset \cup (A \cap A) = A$\\
+	De lo anterior, tenemos que:
+	$P(A|A \cup B) = \frac{P(A)}{P(A \cup B)}$\\
+	
 
 
 \end{enumerate}
@@ -106,7 +199,7 @@
 	Se dice que un evento B carga informacion negativa acerca del evento A si $P(A|B) \leq P(A)$, se denota  $B \searrow A$. Demuestre o de un contraejemplo a las siguientes afirmaciones:
 		\begin{enumerate}
 		\item{Si $B \searrow A \Rightarrow A \searrow B$}\\
-		\item{Si $B \searrow A \ \wedge A \searrow C \ \Rightarrow B \searrow C$}\\
+			\item{Si $B \searrow A \ \wedge A \searrow C \ \Rightarrow B \searrow C$}\\
 		\item{Si $B \searrow A \ \wedge C \searrow A \ \Rightarrow B\cap C \searrow A$}
 		\end{enumerate}
 
@@ -134,7 +227,38 @@
 
 	% Ejercicio 4
    \item {
-  	Se tienen 100 urnas de tres diferentes tipos. El primer tipo contiene 8 bolas blancas y 2 negras; el segundo tipo 4 blancas y 6 negras; el tercero 1 blanca y 9 negras. Se selecciona una urna al azar y se extrae de ella una bola que resulta blanca. Se devuelve la bola a la urna y se repite el proceso, siendo ahora la bola extraída negra. Si sabe que la probabilidad de que siendo la bola blanca proceda el primer tipo de urna es $\frac{16}{36	}$ y la probabilidad de que siendo la bola negra proceda del segundo tipo de urna es $  \frac{30}{61}$. Calcular el número de urnas de cada tipo.
+  	Se tienen 100 urnas de tres diferentes tipos. El primer tipo contiene 8 bolas blancas y 2 negras; el segundo tipo 4 blancas y 6 negras; el tercero 1 blanca y 9 negras. Se selecciona una urna al azar y se extrae de ella una bola que resulta blanca. Se devuelve la bola a la urna y se repite el proceso, siendo ahora la bola extraída negra. Si sabe que la probabilidad de que siendo la bola blanca proceda el primer tipo de urna es $\frac{16}{39}$ y la probabilidad de que siendo la bola negra proceda del segundo tipo de urna es $  \frac{30}{61}$. Calcular el número de urnas de cada tipo.
+	
+Sabemos que $x + y + z = 100 ...(1)$ siendo cada letra una urna de distinto tipo.\\
+
+Luego, tenemos que $P(U_{1} | Blanca) = \frac{16}{39}$ \\
+Usando teorema de Bayes tenemos que $\frac{16}{39} = \frac{P(Blanca| U_{1})P(U_{1})}{P(Blanca)}$\\
+$P(Blanca| U_{1}) = \frac{8}{10}$ por el contenido de la primera urna.\\
+$P(U_{1}) = \frac{x}{100}$\\
+$P(Blanca) = \frac{8x +4y +z}{1000}$ ya que tenemos las bolas blancas de cada urna entre las 10 posibles bolas de las 100 urnas\\
+De ahí, tenemos: $\frac{16}{39} = \frac{(\frac{8}{10})(\frac{x}{100})}{\frac{8x +4y +z}{1000}}$\\
+Despejando esa división, nos queda la ecuación: $23x -8y-2z = 0 ...(2)$\\
+
+Análogamente, tenemos por teorema de Bayes que $\frac{30}{61} = \frac{P(Negra| U_{2})P(U_{2})}{P(Negra)}$\\
+$P(Negra| U_{2}) = \frac{6}{10}$ por el contenido de la segunda urna.\\
+$P(U_{2}) = \frac{y}{100}$\\
+$P(Negra) = \frac{2x + 6y +9z}{1000}$ ya que tenemos las bolas negras de cada urna entre las 10 posibles bolas de las 100 urnas\\
+De ahí, tenemos: $\frac{30}{61} = \frac{(\frac{6}{10})(\frac{y}{100})}{\frac{2x +6y +9z}{1000}}$\\
+Despejando esa división, nos queda la ecuación: $10x -31y +45z = 0 ...(3)$\\
+
+Resolvemos el sistema de ecuaciones:\\
+$x + y + z = 100$\\
+$23x -8y-2z = 0$\\
+$10x -31y +45z = 0$\\
+
+Despejamos a $x$ de (1): $ x = 100 -y -z$\\
+Despejamos a $y$ de (2) con el despeje de $x$: $ y = \frac{25z -2300}{31}$\\
+Sustituimos al despeje de $x$ y $y$ en (3): $z = 30$\\
+Sustituimos a $z$ en el despeje de $y$ y tenemos que $y = 50$\\
+Sustituimos a $z$ y $y$ en el despeje de $x$ y tenemos que: $x = 20$\\
+
+Por lo tanto, hay 20 urnas de tipo 1, 50 urnas de tipo 2 y 30 urnas de tipo 3.\\
+	
 	}
 
 	% Ejercicio 5
