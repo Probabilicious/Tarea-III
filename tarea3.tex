@@ -67,7 +67,7 @@
 	% Ejercicio 2
    \item {
     Diga si las siguientes afirmaciones son verdaderas o falsas. Demuestre o de un contraejemplo:\\
-    
+
     \begin{enumerate}[label=\alph*) ]
 	%a
 	\item{ $P(A|B) \leq P(A)$\\
@@ -83,11 +83,11 @@
 	\item{Si $P(A)=0 \Rightarrow A= \emptyset$ \\
 
 	}
-	
+
 	\item{Si $P(A)=P(B^c) \Rightarrow A=B^c$}\\
-	
+
 	\item{$P(A|B) + P(A|B^c)=1$}\\
-	
+
 	\item{Si A y B son mutuamente excluyentes entonces $P(A|A \cup B)=\frac{P(A)}{P(A)+P(B)}$}
 
 
@@ -99,18 +99,51 @@
 
 	% Ejercicio 3
    \item {
-   
+
 	\begin{enumerate}[label=\alph*) ]
 	% a)
    \item {
 	Se dice que un evento B carga informacion negativa acerca del evento A si $P(A|B) \leq P(A)$, se denota  $B \searrow A$. Demuestre o de un contraejemplo a las siguientes afirmaciones:
 		\begin{enumerate}
-		\item{Si $B \searrow A \Rightarrow A \searrow B$}\\
-		\item{Si $B \searrow A \ \wedge A \searrow C \ \Rightarrow B \searrow C$}\\
-		\item{Si $B \searrow A \ \wedge C \searrow A \ \Rightarrow B\cap C \searrow A$}
+		\item{
+			Si $B \searrow A \Rightarrow A \searrow B$ \\
+			Tenemos que
+			\[B \searrow A \implies P(A|B) = \frac{P(A \cap B)}{P(B)} \leq P(A) \implies \frac{P(A \cap B)}{P(A)} \leq P(B)\]
+			Y como $\frac{P(A \cap B)}{P(A)} = P(B|A)$, entonces
+			\[\frac{P(A \cap B)}{P(A)} = P(B|A) \leq P(B) \implies A \searrow B\]
+		}\\
+		Para ambos incisos restantes, sea $\Omega = \{1,2, 3, 4, 5, 6\}$ el espacio muestral
+		\item{
+			Si $B \searrow A \ \wedge A \searrow C \ \Rightarrow B \searrow C$\\
+			Con $B = \{4, 5, 6\}$, $A = \{1, 3, 5\}$ y $C = \{2, 4, 6\}$ se tiene que
+			\[P(A) = \frac{1}{2}, P(B) = \frac{1}{2}, P(C) = \frac{1}{2}\]
+			Y de esto se obtiene que
+			\begin{align*}
+				&P(A|B) = \frac{P(A \cap B)}{P(B)} = \frac{\frac{1}{6}}{\frac{1}{2}}
+				= \frac{1}{3} \leq \frac{1}{2} = P(A) \implies B \searrow A\\
+				&P(C|A) = \frac{P(C \cap A)}{P(A)} = \frac{0}{\frac{1}{2}}
+				= 0 \leq \frac{1}{2} = P(C) \implies A \searrow C\\
+				&P(C|B) = \frac{P(C \cap B)}{P(B)} = \frac{\frac{1}{3}}{\frac{1}{2}}
+				= \frac{2}{3} \geq \frac{1}{2} = P(C) \implies B \nearrow C
+			\end{align*}
+			Por lo tanto, la proposición es falsa
+			}\\
+		\item{
+			Si $B \searrow A \ \wedge C \searrow A \ \Rightarrow B\cap C \searrow A$\\
+			Con $A = \{2, 5, 6\}$, $B = \{1, 2, 3\}$ Y $C = \{2, 4\}$ se tiene que
+			\[P(A) = \frac{1}{2}, P(B) = \frac{1}{2}, P(C) = \frac{1}{3}\]
+			Y de aquí
+			\begin{align*}
+				&P(A|B) = \frac{P(A \cap B)}{P(B)} = \frac{\frac{1}{6}}{\frac{1}{2}}
+				= \frac{1}{3} \leq \frac{1}{2} = P(A) \implies B \searrow A\\
+				&P(A|C) = \frac{P(A \cap C)}{P(C)} = \frac{\frac{1}{6}}{\frac{1}{3}}
+				= \frac{1}{2}\leq \frac{1}{2} = P(A) \implies C \searrow A\\
+				&P(A|B \cap C) = \frac{P(A \cap C \cap B)}{P(B \cap C)} = \frac{\frac{1}{6}}{\frac{1}{6}}
+				= 1 \geq \frac{1}{2} = P(A) \implies B \cap C \nearrow A
+			\end{align*}
+			Por lo tanto la proposición es falsa
+		}
 		\end{enumerate}
-
-
    }
 
    % b)
@@ -118,9 +151,41 @@
  Se dice que un evento B carga informacion positiva acerca del evento A si
  $P(A|B) \geq P(A)$ se denota como $B \nearrow A$. Demuestre o de un contraejemplo a las siguientes afirmaciones:
  \begin{enumerate}
- \item{Si $B\nearrow A \ \Rightarrow A\nearrow B$}\\
- \item{Si $B \nearrow A \ \wedge A \nearrow C \ \Rightarrow B \nearrow C$}\\
- \item{Si $B \nearrow A \ \wedge C \nearrow A \ \Rightarrow B\cap C \nearrow A$}
+ \item{
+ 	Si $B\nearrow A \ \Rightarrow A\nearrow B$\\
+	Análogamente,
+	\[B \nearrow A \implies P(A|B) = \frac{P(A \cap B)}{P(B)} \geq P(A) \implies \frac{P(A \cap B)}{P(A)} \geq P(B)\]
+	Y como $\frac{P(A \cap B)}{P(A)} = P(B|A)$, entonces
+	\[\frac{P(A \cap B)}{P(A)} = P(B|A) \geq P(B) \implies A \nearrow B\]
+	}\\
+
+	Para ambos incisos restantes, sea $\Omega = \{1,2, 3, 4, 5, 6\}$ el espacio muestral
+ \item{
+ 		Si $B \nearrow A \ \wedge A \nearrow C \ \Rightarrow B \nearrow C$\\
+		Con $A = \{2, 4, 6\}$, $B = \{2, 3, 4, 5, 6\}$ y $C = \{1, 2, 3, 6\}$ tenemos que
+		\begin{align*}
+			&P(A|B) = \frac{P(A \cap B)}{P(B)} = \frac{\frac{1}{2}}{\frac{5}{6}}
+			= \frac{3}{5} \geq \frac{1}{2} = P(A) \implies B \nearrow A \\
+			&P(C|A) = \frac{P(A \cap C)}{P(A)} = \frac{\frac{1}{3}}{\frac{1}{2}}
+			= \frac{2}{3} \geq \frac{2}{3} = P(C) \implies A \nearrow C \\
+			&P(C|B) = \frac{P(C \cap B)}{P(B)} = \frac{\frac{1}{2}}{\frac{5}{6}}
+			= \frac{3}{5} \leq \frac{2}{3} = P(C) \implies B \searrow C
+		\end{align*}
+		Por lo tanto la proposición es falsa\\
+	}
+ \item{
+ 		Si $B \nearrow A \ \wedge C \nearrow A \ \Rightarrow B\cap C \nearrow A$\\
+		Con $A = \{1, 2, 3, 6\}$, $B = \{2, 4, 6\}$ Y $C = \{1, 2, 3, 4\}$ pasa que
+		\begin{align*}
+			&P(A|B) = \frac{P(A \cap B)}{P(B)} = \frac{\frac{1}{3}}{\frac{1}{2}}
+			= \frac{2}{3} \geq \frac{2}{3} = P(A) \implies B \nearrow A\\
+			&P(A|C) = \frac{P(A \cap C)}{P(C)} = \frac{\frac{1}{2}}{\frac{2}{3}}
+			= \frac{3}{4} \geq \frac{2}{3} = P(A) \implies C \nearrow A\\
+			&P(A|B \cap C) = \frac{P(A \cap B \cap C)}{P(B \cap C)} = \frac{\frac{1}{6}}{\frac{1}{3}}
+			= \frac{1}{2} \leq \frac{2}{3} = P(A) \implies B \cap C \searrow A
+		\end{align*}
+		Por lo tanto, la proposición es false
+	}
  \end{enumerate}
 
    }
@@ -140,7 +205,7 @@
 	% Ejercicio 5
    \item {
    Demuestre que si A,B,C son independientes entonces A y $B\cup C$ son independientes.
-	
+
     }
 
 	% Ejercicio 6
@@ -161,12 +226,12 @@
     Sea $\Omega = \lbrace 1,2,3,4 \rbrace$ y supongase que $P(\lbrace i \rbrace)=.25$ para cualquier $i\in \rbrace 1,2,3,4 \rbrace$. Demuestre que las parejas de eventos A y B, A y C, B y C son independientes. Donde:\\
     \begin{center}
     $A=\lbrace 1,2,3,4 \rbrace \ \ B=\lbrace 2,3 \rbrace \ \ C= \lbrace 2,4 \rbrace $
-\end{center}     
+\end{center}
 	}
 
 	% Ejercicio 9
    \item {
-  Exhiba un ejemplo de un espacio de probabilidad de tal manera que $A,B,C$ satisfagan que: \\ 
+  Exhiba un ejemplo de un espacio de probabilidad de tal manera que $A,B,C$ satisfagan que: \\
   \begin{center}
   $P(A\cap B \cap C) = P(A)P(B)P(C)$
   \end{center}
@@ -175,12 +240,12 @@
 
 	% Ejercicio 10
    \item {
-    Se presentan tres problemas clasicos de probabilidad. 
-    
+    Se presentan tres problemas clasicos de probabilidad.
+
     \begin{enumerate}[label=\alph*) ]
     \item{Se lanzan tres dados balanceados. Comparar la probabilidad de que la suma de las caras sea 8 con la probabilidad de que la suma de las caras sea 9.
-    }\\ 
-    
+    }\\
+
     \item{Comparar la probabilidad de que al menos un 5 aparezca en cuatro lanzamientos de un dado balanceado con la probabilidad de que aparezca un doble 5 en 24 lanzamientos de dos dados balanceados.} \\
     \item{Comparar la probabilidad de que al menos un 3 aparezca cuando seis dados son lanzados con la probabilidad de que al menos dos 3s aparezcan cuando doce dados son lanzados.}
     \end{enumerate}
@@ -193,7 +258,7 @@
 	}
 
 % Ejercicio 12
-   \item {En el salón de un cierto grupo de Probabilidad I hay 4 hombres y 6 mujeres que estudian la licenciatura en Actuaría. También hay 6 hombres que estudian la licenciatura en Matemáticas. ¿Cuántas mujeres de la licenciatura en Matemáticas deben estar presentes en la clase si el sexo y la carrera se consideran independientes cuando se selecciona un estudiante al azar?	
+   \item {En el salón de un cierto grupo de Probabilidad I hay 4 hombres y 6 mujeres que estudian la licenciatura en Actuaría. También hay 6 hombres que estudian la licenciatura en Matemáticas. ¿Cuántas mujeres de la licenciatura en Matemáticas deben estar presentes en la clase si el sexo y la carrera se consideran independientes cuando se selecciona un estudiante al azar?
 	}
 
 	  %Ejercicio 13
@@ -201,7 +266,7 @@
  Resuelva los siguientes ejercicios:\\
  \begin{enumerate}[label=\alph*) ]
  \item{Se sabe que $P(A)= \frac{2}{5},P(A\cup B)=\frac{3}{5},P(B|A)=\frac{1}{4},P(C|B)=\frac{1}{3}$ y $P(C|A\cap B)=\frac{1}{2}$. Encontrar $P(A|B\cap C)$}\\
- \item{Se sabe que $P(A|B\cap C)=0.6, P(B|A\cap C)=0.3$ y $P(C|A\cap B)=0.9$ encontrar: \\ 
+ \item{Se sabe que $P(A|B\cap C)=0.6, P(B|A\cap C)=0.3$ y $P(C|A\cap B)=0.9$ encontrar: \\
  \begin{center}
  $P(A\cap B\cap C| (A\cap B) \cup (A\cap C) \cup (B\cap C)$
  \end{center} }
