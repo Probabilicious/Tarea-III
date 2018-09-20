@@ -67,7 +67,7 @@
 	% Ejercicio 2
    \item {
     Diga si las siguientes afirmaciones son verdaderas o falsas. Demuestre o de un contraejemplo:\\
-    
+
     \begin{enumerate}[label=\alph*) ]
 	%a
 	\item{ $P(A|B) \leq P(A)$\\
@@ -83,11 +83,11 @@
 	\item{Si $P(A)=0 \Rightarrow A= \emptyset$ \\
 
 	}
-	
+
 	\item{Si $P(A)=P(B^c) \Rightarrow A=B^c$}\\
-	
+
 	\item{$P(A|B) + P(A|B^c)=1$}\\
-	
+
 	\item{Si A y B son mutuamente excluyentes entonces $P(A|A \cup B)=\frac{P(A)}{P(A)+P(B)}$}
 
 
@@ -99,7 +99,7 @@
 
 	% Ejercicio 3
    \item {
-   
+
 	\begin{enumerate}[label=\alph*) ]
 	% a)
    \item {
@@ -139,9 +139,43 @@
 
 	% Ejercicio 5
    \item {
-   Demuestre que si A,B,C son independientes entonces A y $B\cup C$ son independientes.
-	
-    }
+   Demuestre que si A,B,C son independientes entonces A y $B\cup C$ son independientes.\\
+    Sean $A$, $B$ y  $C$ eventos independientes, así, se tiene que $A$ y $B \cup C$
+	son independientes si y sólo si
+		$$ P(A\cap(B \cup C)) = P(A)P(B \cup C) $$
+
+	Así, consideremos a $ P(A\cap(B \cup C)) $, por distributividad
+	se tiene:
+		$$ P(A\cap(B \cup C)) = P((A \cap B) \cup (A \cap C)) $$
+
+	luego, por propiedades de $P$ medida de probabilidad, se sigue
+		$$ P((A \cap B) \cup (A \cap C)) = P(A \cap B) + P(A \cap C) - P((A \cap B) \cap (A \cap C)) $$
+
+	y por propiedades de conjuntos, tenemos:
+		$$ P(A \cap B) + P(A \cap C) - P((A \cap B) \cap (A \cap C)) = P(A \cap B) + P(A \cap C) - P(A \cap B \cap C) $$
+
+	como por hipótesis, se tiene que $A$, $B$ y $C$ son independientes, se cumple:
+		$$ P(A \cap B) = P(A)P(B) $$
+		$$ P(A \cap C) = P(A)P(C) $$
+		$$ P(B \cap C) = P(B)P(C) $$
+		$$ P(A \cap B \cap C) = P(A)P(B)P(C) $$
+
+	por lo cual, se tiene
+		$$ P(A \cap B) + P(A \cap C) - P(A \cap B \cap C) = P(A)P(B) + P(A)P(C) - P(A)P(B)P(C) $$
+
+	por asociatividad se sigue
+		$$ P(A)P(B) + P(A)P(C) - P(A)P(B)P(C) = P(A)[P(B) + P(C) - P(B)P(C)] $$
+
+	finalmente, por ser $P$ una medida de probabilidad, podemos decir
+		$$ P(A)[P(B) + P(C) - P(B)P(C)] = P(A)[P(B \cup C)] = P(A)P(B \cup C) $$
+
+	con lo cual concluimos que $A$ y $B \cup C$ son eventos independientes.
+
+	\begin{flushright}
+		$_{\square}$
+	\end{flushright}
+
+	}
 
 	% Ejercicio 6
    \item {
@@ -161,12 +195,68 @@
     Sea $\Omega = \lbrace 1,2,3,4 \rbrace$ y supongase que $P(\lbrace i \rbrace)=.25$ para cualquier $i\in \rbrace 1,2,3,4 \rbrace$. Demuestre que las parejas de eventos A y B, A y C, B y C son independientes. Donde:\\
     \begin{center}
     $A=\lbrace 1,2,3,4 \rbrace \ \ B=\lbrace 2,3 \rbrace \ \ C= \lbrace 2,4 \rbrace $
-\end{center}     
+	\end{center}
+
+		Observemos que al ser $i \in \{1,2,3,4\}$, se tiene que como cada $ \{i\} \subseteq \Omega$
+		es un evento mutuamente exculyente de algún $\{ j \} \subseteq \Omega$, con
+		$j \in \{1,2,3,4\}$ y $ i \neq j$ se cumple que $ P(\{i\} \cup \{j\}) = P(\{i\}) + P(\{j\}) $
+		para $i \neq j$.\\
+
+		Así, podemos afirmar que
+			$$ P(B) = P(\{ 2 \} \cup \{ 3 \} ) = P(\{2\}) + P(\{3\}) = 0.25 + 0.25 = 0.5 $$
+			$$ P(C) = P(\{ 2 \} \cup \{ 4 \} ) = P(\{2\}) + P(\{4\}) = 0.25 + 0.25 = 0.5 $$
+
+		y por ser $P$ una medida de probabilidad:
+			$$ P(A) = P(\Omega) = 1 $$
+
+		Ahora, se tiene $A$ y $B$ son independientes si y sólo si
+			$$ P(A \cap B) = P(A)P(B) $$
+
+		por intersección de los eventos $A$ y $B$ se tiene:
+			$$ A \cap B = \{ 2,3 \}$$
+
+		consideremos ahora
+			$$ P( A \cap B ) = P(\{ 2,3 \})$$
+
+		se tiene entonces por la observación anterior que
+			$$ P(\{ 2,3 \}) = P(\{ 2 \} \cup \{ 3 \} ) = 0.25 + 0.25 = 0.5$$
+
+		y ahora notemos que
+			$$ P(A)P(B) = (1)(0.5) = 0.5 $$
+		por lo cual se tiene
+			$$ P(A \cap B) = 0.5 = P(A)P(B) $$
+		siendo así $A$ y $B$ eventos independientes.\\
+
+		Considerando ahora $A$ y $C$, se tiene:
+			$$ A \cap C = \{ 2,4 \}$$
+			$$ P( A \cap C ) = P(\{ 2,4 \}) = P(\{ 2 \} \cup \{ 4 \} ) = 0.25 + 0.25 = 0.5 $$
+
+		notemos ahora que
+			$$ P(A)P(C) = (1)(0.5) = 0.5 $$
+
+		por lo cual se tiene
+			$$ P(A)P(C) = 0.5 = P( A \cap C ) $$
+		así $A$ y $C$ son eventos independientes.\\
+
+		Por último, considerando los eventos $B$ y $C$, se tiene:
+			$$ B \cap C = \{ 2 \}$$
+			$$ P( B \cap C ) = P(\{ 2 \}) = 0.25 $$
+
+		también se tiene:
+			$$ P(B)P(C) = (0.5)(0.5) = 0.25 $$
+		así, se sigue
+			$$ P(B)P(C) = 0.25 =  P( B \cap C )$$
+
+		con lo cual concluimos que A y B; A y C; y B y C son independientes.
+		\begin{flushright}
+			$_{\square}$
+		\end{flushright}
+
 	}
 
 	% Ejercicio 9
    \item {
-  Exhiba un ejemplo de un espacio de probabilidad de tal manera que $A,B,C$ satisfagan que: \\ 
+  Exhiba un ejemplo de un espacio de probabilidad de tal manera que $A,B,C$ satisfagan que: \\
   \begin{center}
   $P(A\cap B \cap C) = P(A)P(B)P(C)$
   \end{center}
@@ -175,12 +265,12 @@
 
 	% Ejercicio 10
    \item {
-    Se presentan tres problemas clasicos de probabilidad. 
-    
+    Se presentan tres problemas clasicos de probabilidad.
+
     \begin{enumerate}[label=\alph*) ]
     \item{Se lanzan tres dados balanceados. Comparar la probabilidad de que la suma de las caras sea 8 con la probabilidad de que la suma de las caras sea 9.
-    }\\ 
-    
+    }\\
+
     \item{Comparar la probabilidad de que al menos un 5 aparezca en cuatro lanzamientos de un dado balanceado con la probabilidad de que aparezca un doble 5 en 24 lanzamientos de dos dados balanceados.} \\
     \item{Comparar la probabilidad de que al menos un 3 aparezca cuando seis dados son lanzados con la probabilidad de que al menos dos 3s aparezcan cuando doce dados son lanzados.}
     \end{enumerate}
@@ -193,7 +283,7 @@
 	}
 
 % Ejercicio 12
-   \item {En el salón de un cierto grupo de Probabilidad I hay 4 hombres y 6 mujeres que estudian la licenciatura en Actuaría. También hay 6 hombres que estudian la licenciatura en Matemáticas. ¿Cuántas mujeres de la licenciatura en Matemáticas deben estar presentes en la clase si el sexo y la carrera se consideran independientes cuando se selecciona un estudiante al azar?	
+   \item {En el salón de un cierto grupo de Probabilidad I hay 4 hombres y 6 mujeres que estudian la licenciatura en Actuaría. También hay 6 hombres que estudian la licenciatura en Matemáticas. ¿Cuántas mujeres de la licenciatura en Matemáticas deben estar presentes en la clase si el sexo y la carrera se consideran independientes cuando se selecciona un estudiante al azar?
 	}
 
 	  %Ejercicio 13
@@ -201,7 +291,7 @@
  Resuelva los siguientes ejercicios:\\
  \begin{enumerate}[label=\alph*) ]
  \item{Se sabe que $P(A)= \frac{2}{5},P(A\cup B)=\frac{3}{5},P(B|A)=\frac{1}{4},P(C|B)=\frac{1}{3}$ y $P(C|A\cap B)=\frac{1}{2}$. Encontrar $P(A|B\cap C)$}\\
- \item{Se sabe que $P(A|B\cap C)=0.6, P(B|A\cap C)=0.3$ y $P(C|A\cap B)=0.9$ encontrar: \\ 
+ \item{Se sabe que $P(A|B\cap C)=0.6, P(B|A\cap C)=0.3$ y $P(C|A\cap B)=0.9$ encontrar: \\
  \begin{center}
  $P(A\cap B\cap C| (A\cap B) \cup (A\cap C) \cup (B\cap C)$
  \end{center} }
