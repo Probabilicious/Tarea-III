@@ -179,7 +179,35 @@
 
 	% Ejercicio 6
    \item {
-   Se sabe que $P(A)= \frac{1}{2}$ y $P(A\cup B)=\frac{7}{10}$. Alex supone que A y B son independientes y calcula $P(B)$ basándose en dicha suposición. Augusto supone que A y B son mutuamente excluyentes y calcula $P(B)$ basándose en dicha suposición. Encontrar la diferencia absoluta entre los dos resultados.
+   Se sabe que $P(A)= \frac{1}{2}$ y $P(A\cup B)=\frac{7}{10}$. Alex supone que A y B son independientes y calcula $P(B)$ basándose en dicha suposición. Augusto supone que A y B son mutuamente excluyentes y calcula $P(B)$ basándose en dicha suposición. Encontrar la diferencia absoluta entre los dos resultados.\\
+
+   		Si suponemos que $A$ y $B$ son independientes, mas no mutuamente excluyentes,
+		entonces al ser $P$ una medida de probabilidad, se cumple como propiedad:
+			$$ P(A \cup B) = P(A) + P(B) - P(A \cap B)$$
+
+		luego, como $A$ y $B$ se suponen independientes, se sigue:
+			$$ P(A) + P(B) - P(A \cap B) = P(A) + P(B) + P(A)P(B) $$
+		y así también
+			$$ P(A) + P(B) + P(A)P(B) = P(B)[P(A) + 1] + P(A)  $$
+
+		luego, notemos que al ser $P$ medida de probabilidad, podemos decir:
+			$$ P(B)[P(A) + 1] + P(A) = P(A \cup B) $$
+			$$ P(B)[P(A) + 1] = P(A \cup B) - P(A)$$
+			$$ P(B) = \frac{P(A \cup B) - P(A)}{P(A) + 1} $$
+			$$ P(B) = \frac{ \frac{7}{10} - \frac{1}{2} }{ \frac{1}{2} + 1}
+			        = \frac{ \frac{7}{10} - \frac{5}{10} }{ \frac{3}{2}}
+					= \frac{ \frac{2}{10} }{ \frac{3}{2}}
+					= \frac{ 4 }{ 30 } \approx 0.1333 $$
+
+		Ahora, si suponemos a $A$ y $B$ como eventos mutuamente excluyentes, se
+		tiene por la propiedad de $\sigma -$Aditividad de la medida de probabilidad
+		$P$ que:
+			$$ P(A \cup B) = P(A) + P(B) $$
+		por lo cual :
+			$$ P(B) = P(A \cup B) - P(A) = \frac{7}{10} - \frac{1}{2} = \frac{2}{10} = 0.2  $$
+
+		por lo cual la diferencia absoluta de ambos resultados es :
+			$$ | \frac{4}{30} - \frac{2}{10} | = \frac{2}{30} \approx 0.06666 $$
 	}
 
 	% Ejercicio 7
