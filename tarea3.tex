@@ -455,6 +455,7 @@ Por lo tanto, hay 20 urnas de tipo 1, 50 urnas de tipo 2 y 30 urnas de tipo 3.\\
     \begin{center}
     $A=\lbrace 1,2,3,4 \rbrace \ \ B=\lbrace 2,3 \rbrace \ \ C= \lbrace 2,4 \rbrace $
 <<<<<<< HEAD
+<<<<<<< HEAD
 \end{center}
 =======
 	\end{center}
@@ -515,6 +516,9 @@ Por lo tanto, hay 20 urnas de tipo 1, 50 urnas de tipo 2 y 30 urnas de tipo 3.\\
 		\end{flushright}
 
 >>>>>>> ejercicios5-8
+=======
+\end{center}
+>>>>>>> 13-15
 	}
 
 	% Ejercicio 9
@@ -551,6 +555,7 @@ Por lo tanto, hay 20 urnas de tipo 1, 50 urnas de tipo 2 y 30 urnas de tipo 3.\\
 
 	  %Ejercicio 13
   \item{
+<<<<<<< HEAD
  Resuelva los siguientes ejercicios:\\
  \begin{enumerate}[label=\alph*) ]
  \item{Se sabe que $P(A)= \frac{2}{5},P(A\cup B)=\frac{3}{5},P(B|A)=\frac{1}{4},P(C|B)=\frac{1}{3}$ y $P(C|A\cap B)=\frac{1}{2}$. Encontrar $P(A|B\cap C)$}\\
@@ -559,6 +564,90 @@ Por lo tanto, hay 20 urnas de tipo 1, 50 urnas de tipo 2 y 30 urnas de tipo 3.\\
  $P(A\cap B\cap C| (A\cap B) \cup (A\cap C) \cup (B\cap C)$
  \end{center} }
  \end{enumerate}
+=======
+		 Resuelva los siguientes ejercicios:\\
+		 \begin{enumerate}[label=\alph*) ]
+		 \item{
+			Se sabe que $P(A)= \frac{2}{5},P(A\cup B)=\frac{3}{5},P(B|A)=\frac{1}{4},P(C|B)=\frac{1}{3}$ y $P(C|A\cap B)=\frac{1}{2}$. Encontrar $P(A|B\cap C)$\\
+
+			Por definición,
+			\begin{equation*}
+				P(A|B \cap C) = \frac{P(A \cap B \cap C)}{P(B \cap C)}
+			\end{equation*}
+			Entonces, hay que encontrar esas dos probabilidades.\\
+
+			De las probabilidades dadas, podemos deducir que
+			\begin{align*}
+				P(C|A\cap B) &= \frac{1}{2} = \frac{P(C \cap A \cap B)}{P(A \cap B)}  \\
+				\implies  P(A \cap B \cap C) &= P(C|A\cap B) P(A \cap B)\\
+																		 &= \frac{1}{2} P(A \cap B)
+			\end{align*}
+
+			Y también podemos encontrar $P(A \cap B)$ de la siguiente manera
+
+			\begin{align*}
+				P(B|A) &= \frac{1}{4} \\
+							 &= \frac{P(B \cap A)}{P(A)} = \frac{P(B \cap A)}{\frac{2}{5}}\\
+							 &= \frac{5P(B \cap A)}{2}\\
+				\implies P(B \cap A) &= \frac{2P(B|A)}{5} = \frac{2(\frac{1}{4})}{5}\\
+							 &= \frac{\frac{1}{2}}{5} = \frac{1}{10}
+			\end{align*}
+
+			Entoces $P(A\cap B \cap C) = \frac{1}{2} P(A \cap B) = \frac{1}{2} \cdot \frac{1}{10} = \frac{1}{20}$.\\
+
+			Sólo falta encontrar $P(B \cap C)$.\\
+
+			Podemos deducir que
+			\begin{align*}
+				P(C|B) &= \frac{1}{3}\\
+							 &= \frac{P(C \cap B)}{P(B)}\\
+				\implies P(C \cap B) &= 	P(C|B) P(B) = \frac{1}{3} P(B)
+			\end{align*}
+
+			Pero ¿cuánto vale $P(B)$? Eso se puede saber así
+
+			\begin{align*}
+				P(A\cup B) &= \frac{3}{5}\\
+									 &= P(A) + P(B) - P(A \cap B)\\
+				\implies P(B) &= P(A\cup B) + P(A \cap B) - P(A)\\
+									 &= \frac{3}{5} + \frac{1}{10} - \frac{2}{5}\\
+									 &= \frac{6+1-4}{10} = \frac{3}{10}
+			\end{align*}
+
+			Entonces $P(C \cap B) = \frac{1}{3}P(B) = \frac{1}{3} \cdot \frac{3}{10} = \frac{1}{10}$.\\
+
+			Entonces
+			\begin{equation*}
+				P(A|B \cap C) = \frac{P(A \cap B \cap C)}{P(B \cap C)} = \frac{\frac{1}{20}}{\frac{1}{10}}	= \frac{10}{20} = \frac{1}{2}
+			\end{equation*}
+		 }
+
+		 \item{
+		 	Se sabe que $P(A|B\cap C)=0.6, P(B|A\cap C)=0.3$ y $P(C|A\cap B)=0.9$ encontrar: \\
+		 	\begin{center}
+		 	$P(A\cap B\cap C| (A\cap B) \cup (A\cap C) \cup (B\cap C))$
+		 	\end{center}
+			Notemos que, por la distributividad de la unión y la intersección de conjuntos
+			\begin{align*}
+				(A\cap B) \cup (A\cap C) \cup (B\cap C) &= (A \cap (B \cup C)) \cup (B \cap C)\\
+				 																				&= (A \cup (B \cap C)) \cap ((B \cap C) \cup (B \cup C))\\
+																								&= (A \cup (B \cap C)) \cap (B \cap C)\\
+																								&= (A \cap B \cap C) \cup ((B \cap C) \cap (B \cap C))\\
+																								&= (A \cap B \cap C) \cup (B \cap C)\\
+																								&= (A \cap B \cap C)
+			\end{align*}
+
+			Entonces
+
+			\begin{align*}
+				P(A\cap B\cap C| (A\cap B) \cup (A\cap C) \cup (B\cap C)) &= P(A\cap B\cap C | A\cap B\cap C)\\
+																																	&= \frac{P((A\cap B\cap C) \cap (A\cap B\cap C))}{P(A\cap B\cap C)}\\
+																																	&= \frac{P(A\cap B\cap C)}{P(A\cap B\cap C)}\\
+																																	&= 1
+			\end{align*}
+		 }
+		 \end{enumerate}
+>>>>>>> 13-15
   }
 
 
@@ -566,14 +655,74 @@ Por lo tanto, hay 20 urnas de tipo 1, 50 urnas de tipo 2 y 30 urnas de tipo 3.\\
   \item{
  Una caja contiene bolas numeradas del 1 al n de modo que al escoger una bola al azar la probabilidad de obtener un numero es proporcional a su magnitud. Se selecciona una bola al azar ¿Cuál es la probabilidad de que esté marcada con el número 1\\
  \begin{enumerate}[label= \alph*) ]
- \item{Sin tener informacion adiconal?}\\
- \item{Sabiendo que la bola seleccionada está marcada con algún número entre 1 y m$\leq m \leq n$?}
+ \item{
+	 	¿Sin tener informacion adicional?\\
+		Suponiendo que la bola $k$ tiene $k$ veces más posibilidades de ser sacada que la bola 1,
+		entonces la probabilidad total sería proporciaonal a la suma de todos los números del 1 hasta $n$.\\
+		Esto es $\frac{n(n-1)}{2}$.\\
+		Y como la probabilidad de sacar la bola 1 es igualmente  proporcional 1
+		\begin{equation*}
+			P(B_1) = \frac{1}{\frac{n(n-1)}{2}} = \frac{2}{n(n-1)}
+		\end{equation*}
+	}
+ \item{
+	 	¿Sabiendo que la bola seleccionada está marcada con algún número entre 1 y $m$, $1\leq m \leq n$?\\
+		Sea $M$ el evento de que la bola esté entre 1 y $m$.\\
+		Hay que encontrar $P(B_1|M)$.\\
+		Notemos que el conjuto de eventos que corresponden a elegir una bola entre 1 y $n$
+		son una partición del espacio muestral.\\
+		Entonces, por el teorema de Bayes, tenemos que
+
+			\[P(B_1|M) = \frac{P(M | B_1)P(B_1)}{\sum_{i = 1}^n P(M|B_i)P(B_i)}\]
+
+		Si se elige la bola con uno, con dos, o sucesivamente hasta la bola con $m$,
+		entonces se cumple que la bola tiene un número entre 1 y $m$. Por lo que
+		$P(M|B_i) = 1, \forall i \in \{1, ..., m\}$. De la misma manera, si la bola
+		tiene un número major a $m$, entonces $P(M|B_i) = 0, \forall i \in \{m+1, ..., n\}$.\\
+		Entonces
+		\begin{align*}
+			P(B_1|M) &= \frac{P(M | B_1)P(B_1)}{\sum_{i = 1}^n P(M|B_i)P(B_i)}
+							 = \frac{P(B_1)}{\sum_{i = 1}^m P(B_i)}\\
+							 &= \frac{\frac{2}{m(m-1)}}{\sum_{i = 1}^m \frac{2}{m(m-1)}\cdot i}
+							 = \frac{\frac{2}{m(m-1)}}{\frac{2}{m(m-1)} \cdot \sum_{i = 1}^m i}\\
+							 &= \frac{\frac{2}{m(m-1)}}{\frac{2}{m(m-1)} \cdot \frac{m(m-1)}{2}}
+							 = \frac{\frac{2}{m(m-1)}}{1}\\
+							 &= \frac{2}{m(m-1)}
+		\end{align*}
+	}
  \end{enumerate}
   }
 
   		  %Ejercicio 15
   \item{
-Un alumno está buscando una tarjeta para regalarle a su novia, dicho alumno tiene acceso a tres tiendas de regalos, cada una de las tiendas opera en forma independiente de las otras. Cada tienda tiene $\frac{1}{2}$ de probabilidad de tener el regalo buscado y si la tienda tiene el regalo la probabilidad de que el regalo se encuentre agotado es de $\frac{1}{2}$. Encuentre la probabilidad de que el alumno consiga el regalo en alguna de las tres tiendas.
+		Un alumno está buscando una tarjeta para regalarle a su novia,
+		dicho alumno tiene acceso a tres tiendas de regalos, cada una de las tiendas
+		opera en forma independiente de las otras. Cada tienda tiene $\frac{1}{2}$
+		de probabilidad de tener el regalo buscado y si la tienda tiene el regalo la
+		probabilidad de que el regalo se encuentre agotado es de $\frac{1}{2}$.
+		Encuentre la probabilidad de que el alumno consiga el regalo en alguna de
+		las tres tiendas.\\
+
+		Digamos que el alumno sólo tiene tiempo de ir a una tienda. Entonces el elegir
+		una de las tres tiendas corresponde a una partición de $\Omega$, digamos $\{T_i\}_{i = 1}^3$
+		Entonces la probabilidad, digamos $R$, total de que alguna tienda tenga el regalo buscado es
+		\begin{equation*}
+			P(R) = \sum_{i = 1}^3 P(R | T_i) P(T_i) = \frac{1}{3 \cdot 2}
+			+ \frac{1}{3 \cdot 2} + \frac{1}{3 \cdot 2} = \frac{1}{2}
+		\end{equation*}
+		Además, ya se sabe que la probabilidad, digamos $D^c$, de que el regalo no esté
+		disponible dado que la tieda lo tenga es $\frac{1}{2}$, entonces
+		\begin{equation*}
+			P(D^c) = P(D^c | R)P(R) + P(D^c | R^c)P(R) = \frac{1}{2} \cdot \frac{1}{2}
+			+ 1 \cdot \frac{1}{2} = \frac{3}{4}
+		\end{equation*}
+		Esto es porque si la tienda lo tiene, entonces hay una probabilidad de
+		$\frac{1}{2}$ de que no esté disponible, y si no lo tiene, entonces hay una
+		probabilidad de 1 de que no esté disponible. \\
+		Por lo tanto
+		\begin{equation*}
+			P(D) = 1 - P(D^c) = 1 - \frac{3}{4} = \frac{1}{4}
+		\end{equation*}
   }
 
 
