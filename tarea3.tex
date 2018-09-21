@@ -328,21 +328,125 @@ Por lo tanto, hay 20 urnas de tipo 1, 50 urnas de tipo 2 y 30 urnas de tipo 3.\\
 
 	% Ejercicio 5
    \item {
+<<<<<<< HEAD
    Demuestre que si A,B,C son independientes entonces A y $B\cup C$ son independientes.
 
     }
+=======
+   Demuestre que si A,B,C son independientes entonces A y $B\cup C$ son independientes.\\
+    Sean $A$, $B$ y  $C$ eventos independientes, así, se tiene que $A$ y $B \cup C$
+	son independientes si y sólo si
+		$$ P(A\cap(B \cup C)) = P(A)P(B \cup C) $$
+
+	Así, consideremos a $ P(A\cap(B \cup C)) $, por distributividad
+	se tiene:
+		$$ P(A\cap(B \cup C)) = P((A \cap B) \cup (A \cap C)) $$
+
+	luego, por propiedades de $P$ medida de probabilidad, se sigue
+		$$ P((A \cap B) \cup (A \cap C)) = P(A \cap B) + P(A \cap C) - P((A \cap B) \cap (A \cap C)) $$
+
+	y por propiedades de conjuntos, tenemos:
+		$$ P(A \cap B) + P(A \cap C) - P((A \cap B) \cap (A \cap C)) = P(A \cap B) + P(A \cap C) - P(A \cap B \cap C) $$
+
+	como por hipótesis, se tiene que $A$, $B$ y $C$ son independientes, se cumple:
+		$$ P(A \cap B) = P(A)P(B) $$
+		$$ P(A \cap C) = P(A)P(C) $$
+		$$ P(B \cap C) = P(B)P(C) $$
+		$$ P(A \cap B \cap C) = P(A)P(B)P(C) $$
+
+	por lo cual, se tiene
+		$$ P(A \cap B) + P(A \cap C) - P(A \cap B \cap C) = P(A)P(B) + P(A)P(C) - P(A)P(B)P(C) $$
+
+	por asociatividad se sigue
+		$$ P(A)P(B) + P(A)P(C) - P(A)P(B)P(C) = P(A)[P(B) + P(C) - P(B)P(C)] $$
+
+	finalmente, por ser $P$ una medida de probabilidad, podemos decir
+		$$ P(A)[P(B) + P(C) - P(B)P(C)] = P(A)[P(B \cup C)] = P(A)P(B \cup C) $$
+
+	con lo cual concluimos que $A$ y $B \cup C$ son eventos independientes.
+
+	\begin{flushright}
+		$_{\square}$
+	\end{flushright}
+
+	}
+>>>>>>> ejercicios5-8
 
 	% Ejercicio 6
    \item {
-   Se sabe que $P(A)= \frac{1}{2}$ y $P(A\cup B)=\frac{7}{10}$. Alex supone que A y B son independientes y calcula $P(B)$ basándose en dicha suposición. Augusto supone que A y B son mutuamente excluyentes y calcula $P(B)$ basándose en dicha suposición. Encontrar la diferencia absoluta entre los dos resultados.
+   Se sabe que $P(A)= \frac{1}{2}$ y $P(A\cup B)=\frac{7}{10}$. Alex supone que A y B son independientes y calcula $P(B)$ basándose en dicha suposición. Augusto supone que A y B son mutuamente excluyentes y calcula $P(B)$ basándose en dicha suposición. Encontrar la diferencia absoluta entre los dos resultados.\\
+
+   		Si suponemos que $A$ y $B$ son independientes, mas no mutuamente excluyentes,
+		entonces al ser $P$ una medida de probabilidad, se cumple como propiedad:
+			$$ P(A \cup B) = P(A) + P(B) - P(A \cap B)$$
+
+		luego, como $A$ y $B$ se suponen independientes, se sigue:
+			$$ P(A) + P(B) - P(A \cap B) = P(A) + P(B) + P(A)P(B) $$
+		y así también
+			$$ P(A) + P(B) + P(A)P(B) = P(B)[P(A) + 1] + P(A)  $$
+
+		luego, notemos que al ser $P$ medida de probabilidad, podemos decir:
+			$$ P(B)[P(A) + 1] + P(A) = P(A \cup B) $$
+			$$ P(B)[P(A) + 1] = P(A \cup B) - P(A)$$
+			$$ P(B) = \frac{P(A \cup B) - P(A)}{P(A) + 1} $$
+			$$ P(B) = \frac{ \frac{7}{10} - \frac{1}{2} }{ \frac{1}{2} + 1}
+			        = \frac{ \frac{7}{10} - \frac{5}{10} }{ \frac{3}{2}}
+					= \frac{ \frac{2}{10} }{ \frac{3}{2}}
+					= \frac{ 4 }{ 30 } \approx 0.1333 $$
+
+		Ahora, si suponemos a $A$ y $B$ como eventos mutuamente excluyentes, se
+		tiene por la propiedad de $\sigma -$Aditividad de la medida de probabilidad
+		$P$ que:
+			$$ P(A \cup B) = P(A) + P(B) $$
+		por lo cual :
+			$$ P(B) = P(A \cup B) - P(A) = \frac{7}{10} - \frac{1}{2} = \frac{2}{10} = 0.2  $$
+
+		por lo cual la diferencia absoluta de ambos resultados es :
+			$$ | \frac{4}{30} - \frac{2}{10} | = \frac{2}{30} \approx 0.06666 $$
 	}
 
 	% Ejercicio 7
    \item {
-   Considérese $(\Omega,F, P)$ un esacio de probabilidad. Demuestre que si $\lbrace A_{i} \rbrace _{i=1}^{n} \subset F$ son eventos independientes entonces:\\
+   Considérese $(\Omega,F, P)$ un esacio de probabilidad. Demuestre que si $\lbrace A_{i} \rbrace _{i=1}^{n} \subset F$ son eventos independientes entonces:
    \begin{center}
-   $P(\bigcup\limits_{i=1}^{n} A_{i})=1-\prod\limits_{i=1}^{n} (1-P(A_{i}))$
+   		$P(\bigcup\limits_{i=1}^{n} A_{i})=1-\prod\limits_{i=1}^{n} (1-P(A_{i}))$
    \end{center}
+
+   		Consideremos que por leyes de De Morgan se cumple lo siguiente:
+			$$ \left(\bigcup_{i=1}^n A_i \right) = \left(\bigcap_{i = 1}^n A_i^c\right)^{c} $$
+
+		Así, consideramos lo siguiente:
+			$$ P\left(\bigcup_{i=1}^n A_i \right) = P\left(\left(\bigcap_{i = 1}^n A_i^c\right)^{c}\right) $$
+
+		pero al ser $P$ una medida de probabilidad, se sigue
+			$$ P\left(\left(\bigcap_{i = 1}^n A_i^c\right)^{c}\right) = 1 - P\left(\bigcap_{i = 1}^n A_i^c\right)$$
+
+		luego, por teorema visto en clase, se sigue que si $A$ y $B$ son independientes,
+		entonces $A^c$ y $B^c$ son independientes, así, como por hipótesis los
+		$\lbrace A_{i} \rbrace _{i=1}^{n} \subset F$ son eventos independientes,
+		se tiene que $ A_{i}^c $ es independiente de $ A_{j}^c $ si $i \neq j$
+		con $ 1 \leq j, i \leq n $\\
+
+		Como por definición se tiene que $A_1, A_2, A_3, ..., A_n$ son independientes
+		si
+			$$ P(A_2 \cap A_2 \cap ... \cap A_n) = \prod_{i=1}^{n} P(A_i) $$
+
+		entonces podemos escribir:
+			$$ 1 - P\left(\bigcap_{i = 1}^n A_i^c\right) = 1 - P(A_1^c \cap A_2^c \cap ... \cap A_n^c) $$
+
+		y como los $\lbrace A_{i}^c \rbrace _{i=1}^{n} \subset F$ son eventos independientes
+		se sigue:
+			$$ 1 - P(A_1^c \cap A_2^c \cap ... \cap A_n^c) = 1 - \prod_{i=1}^{n} P(A_i^c)$$
+
+		luego, observamos que al ser $P$ una medida de probabilidad, se cumple
+		finalmente por propiedades de $P$:
+			$$ 1 - \prod_{i=1}^{n} P(A_i^c) = 1 - \prod_{i=1}^{n}[1 - P(A_i)] $$
+
+		así, por transitividad de la igualdad concluimos:
+			$$ P\left(\bigcup_{i=1}^n A_i \right) = 1 - \prod_{i=1}^{n}[1 - P(A_i)] $$
+		\begin{flushright}
+			$_{\square}$
+		\end{flushright}
 	}
 
 	% Ejercicio 8
@@ -350,7 +454,67 @@ Por lo tanto, hay 20 urnas de tipo 1, 50 urnas de tipo 2 y 30 urnas de tipo 3.\\
     Sea $\Omega = \lbrace 1,2,3,4 \rbrace$ y supongase que $P(\lbrace i \rbrace)=.25$ para cualquier $i\in \rbrace 1,2,3,4 \rbrace$. Demuestre que las parejas de eventos A y B, A y C, B y C son independientes. Donde:\\
     \begin{center}
     $A=\lbrace 1,2,3,4 \rbrace \ \ B=\lbrace 2,3 \rbrace \ \ C= \lbrace 2,4 \rbrace $
+<<<<<<< HEAD
 \end{center}
+=======
+	\end{center}
+
+		Observemos que al ser $i \in \{1,2,3,4\}$, se tiene que como cada $ \{i\} \subseteq \Omega$
+		es un evento mutuamente exculyente de algún $\{ j \} \subseteq \Omega$, con
+		$j \in \{1,2,3,4\}$ y $ i \neq j$ se cumple que $ P(\{i\} \cup \{j\}) = P(\{i\}) + P(\{j\}) $
+		para $i \neq j$.\\
+
+		Así, podemos afirmar que
+			$$ P(B) = P(\{ 2 \} \cup \{ 3 \} ) = P(\{2\}) + P(\{3\}) = 0.25 + 0.25 = 0.5 $$
+			$$ P(C) = P(\{ 2 \} \cup \{ 4 \} ) = P(\{2\}) + P(\{4\}) = 0.25 + 0.25 = 0.5 $$
+
+		y por ser $P$ una medida de probabilidad:
+			$$ P(A) = P(\Omega) = 1 $$
+
+		Ahora, se tiene $A$ y $B$ son independientes si y sólo si
+			$$ P(A \cap B) = P(A)P(B) $$
+
+		por intersección de los eventos $A$ y $B$ se tiene:
+			$$ A \cap B = \{ 2,3 \}$$
+
+		consideremos ahora
+			$$ P( A \cap B ) = P(\{ 2,3 \})$$
+
+		se tiene entonces por la observación anterior que
+			$$ P(\{ 2,3 \}) = P(\{ 2 \} \cup \{ 3 \} ) = 0.25 + 0.25 = 0.5$$
+
+		y ahora notemos que
+			$$ P(A)P(B) = (1)(0.5) = 0.5 $$
+		por lo cual se tiene
+			$$ P(A \cap B) = 0.5 = P(A)P(B) $$
+		siendo así $A$ y $B$ eventos independientes.\\
+
+		Considerando ahora $A$ y $C$, se tiene:
+			$$ A \cap C = \{ 2,4 \}$$
+			$$ P( A \cap C ) = P(\{ 2,4 \}) = P(\{ 2 \} \cup \{ 4 \} ) = 0.25 + 0.25 = 0.5 $$
+
+		notemos ahora que
+			$$ P(A)P(C) = (1)(0.5) = 0.5 $$
+
+		por lo cual se tiene
+			$$ P(A)P(C) = 0.5 = P( A \cap C ) $$
+		así $A$ y $C$ son eventos independientes.\\
+
+		Por último, considerando los eventos $B$ y $C$, se tiene:
+			$$ B \cap C = \{ 2 \}$$
+			$$ P( B \cap C ) = P(\{ 2 \}) = 0.25 $$
+
+		también se tiene:
+			$$ P(B)P(C) = (0.5)(0.5) = 0.25 $$
+		así, se sigue
+			$$ P(B)P(C) = 0.25 =  P( B \cap C )$$
+
+		con lo cual concluimos que A y B; A y C; y B y C son independientes.
+		\begin{flushright}
+			$_{\square}$
+		\end{flushright}
+
+>>>>>>> ejercicios5-8
 	}
 
 	% Ejercicio 9
