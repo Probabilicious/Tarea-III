@@ -212,10 +212,46 @@
 
 	% Ejercicio 7
    \item {
-   Considérese $(\Omega,F, P)$ un esacio de probabilidad. Demuestre que si $\lbrace A_{i} \rbrace _{i=1}^{n} \subset F$ son eventos independientes entonces:\\
+   Considérese $(\Omega,F, P)$ un esacio de probabilidad. Demuestre que si $\lbrace A_{i} \rbrace _{i=1}^{n} \subset F$ son eventos independientes entonces:
    \begin{center}
-   $P(\bigcup\limits_{i=1}^{n} A_{i})=1-\prod\limits_{i=1}^{n} (1-P(A_{i}))$
+   		$P(\bigcup\limits_{i=1}^{n} A_{i})=1-\prod\limits_{i=1}^{n} (1-P(A_{i}))$
    \end{center}
+
+   		Consideremos que por leyes de De Morgan se cumple lo siguiente:
+			$$ \left(\bigcup_{i=1}^n A_i \right) = \left(\bigcap_{i = 1}^n A_i^c\right)^{c} $$
+
+		Así, consideramos lo siguiente:
+			$$ P\left(\bigcup_{i=1}^n A_i \right) = P\left(\left(\bigcap_{i = 1}^n A_i^c\right)^{c}\right) $$
+
+		pero al ser $P$ una medida de probabilidad, se sigue
+			$$ P\left(\left(\bigcap_{i = 1}^n A_i^c\right)^{c}\right) = 1 - P\left(\bigcap_{i = 1}^n A_i^c\right)$$
+
+		luego, por teorema visto en clase, se sigue que si $A$ y $B$ son independientes,
+		entonces $A^c$ y $B^c$ son independientes, así, como por hipótesis los
+		$\lbrace A_{i} \rbrace _{i=1}^{n} \subset F$ son eventos independientes,
+		se tiene que $ A_{i}^c $ es independiente de $ A_{j}^c $ si $i \neq j$
+		con $ 1 \leq j, i \leq n $\\
+
+		Como por definición se tiene que $A_1, A_2, A_3, ..., A_n$ son independientes
+		si
+			$$ P(A_2 \cap A_2 \cap ... \cap A_n) = \prod_{i=1}^{n} P(A_i) $$
+
+		entonces podemos escribir:
+			$$ 1 - P\left(\bigcap_{i = 1}^n A_i^c\right) = 1 - P(A_1^c \cap A_2^c \cap ... \cap A_n^c) $$
+
+		y como los $\lbrace A_{i}^c \rbrace _{i=1}^{n} \subset F$ son eventos independientes
+		se sigue:
+			$$ 1 - P(A_1^c \cap A_2^c \cap ... \cap A_n^c) = 1 - \prod_{i=1}^{n} P(A_i^c)$$
+
+		luego, observamos que al ser $P$ una medida de probabilidad, se cumple
+		finalmente por propiedades de $P$:
+			$$ 1 - \prod_{i=1}^{n} P(A_i^c) = 1 - \prod_{i=1}^{n}[1 - P(A_i)] $$
+
+		así, por transitividad de la igualdad concluimos:
+			$$ P\left(\bigcup_{i=1}^n A_i \right) = 1 - \prod_{i=1}^{n}[1 - P(A_i)] $$
+		\begin{flushright}
+			$_{\square}$
+		\end{flushright}
 	}
 
 	% Ejercicio 8
