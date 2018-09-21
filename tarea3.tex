@@ -290,22 +290,37 @@
  \item{
 	 	¿Sin tener informacion adicional?\\
 		Suponiendo que la bola $k$ tiene $k$ veces más posibilidades de ser sacada que la bola 1,
-		entonces la probabilidad total sería la suma de todos los números del 1 hasta $n$.\\
+		entonces la probabilidad total sería proporciaonal a la suma de todos los números del 1 hasta $n$.\\
 		Esto es $\frac{n(n-1)}{2}$.\\
-		Y como la probabilidad de sacar la bola 1 es proporcional 1
+		Y como la probabilidad de sacar la bola 1 es igualmente  proporcional 1
 		\begin{equation*}
 			P(B_1) = \frac{1}{\frac{n(n-1)}{2}} = \frac{2}{n(n-1)}
 		\end{equation*}
 	}
  \item{
-	 	¿Sabiendo que la bola seleccionada está marcada con algún número entre 1 y m $1\leq m \leq n$?\\
-		Sabiendo que la bola elegida tiene un número entre 1 y $m$ se descartan las
-		bolas marcadas con un número mayor a $m$. Entonces es como tener sólo $m$ bolas
-		realmente. Entoces la probabilidad total cambia a $\frac{m(m-1)}{2}$.
+	 	¿Sabiendo que la bola seleccionada está marcada con algún número entre 1 y $m$, $1\leq m \leq n$?\\
+		Sea $M$ el evento de que la bola esté entre 1 y $m$.\\
+		Hay que encontrar $P(B_1|M)$.\\
+		Notemos que el conjuto de eventos que corresponden a elegir una bola entre 1 y $n$
+		son una partición del espacio muestral.\\
+		Entonces, por el teorema de Bayes, tenemos que
+
+			\[P(B_1|M) = \frac{P(M | B_1)P(B_1)}{\sum_{i = 1}^n P(M|B_i)P(B_i)}\]
+
+		Si se elige la bola con uno, con dos, o sucesivamente hasta la bola con $m$,
+		entonces se cumple que la bola tiene un número entre 1 y $m$. Por lo que
+		$P(M|B_i) = 1, \forall i \in \{1, ..., m\}$. De la misma manera, si la bola
+		tiene un número major a $m$, entonces $P(M|B_i) = 0, \forall i \in \{m+1, ..., n\}$.\\
 		Entonces
-		\begin{equation*}
-			P(B_1) = \frac{1}{\frac{m(m-1)}{2}} = \frac{2}{m(m-1)}
-		\end{equation*}
+		\begin{align*}
+			P(B_1|M) &= \frac{P(M | B_1)P(B_1)}{\sum_{i = 1}^n P(M|B_i)P(B_i)}
+							 = \frac{P(B_1)}{\sum_{i = 1}^m P(B_i)}\\
+							 &= \frac{\frac{2}{m(m-1)}}{\sum_{i = 1}^m \frac{2}{m(m-1)}\cdot i}
+							 = \frac{\frac{2}{m(m-1)}}{\frac{2}{m(m-1)} \cdot \sum_{i = 1}^m i}\\
+							 &= \frac{\frac{2}{m(m-1)}}{\frac{2}{m(m-1)} \cdot \frac{m(m-1)}{2}}
+							 = \frac{\frac{2}{m(m-1)}}{1}\\
+							 &= \frac{2}{m(m-1)}
+		\end{align*}
 	}
  \end{enumerate}
   }
